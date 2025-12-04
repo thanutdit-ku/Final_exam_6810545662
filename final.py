@@ -17,7 +17,7 @@ class Driver(Person):
         self.vehicle = vehicle
     def deliver(self,item):
         self.item = item
-        print(f"{self.name} is delicering {self.item} to {self.name}")
+        print(f"{self.name} is delivering {self.item} to {self.name}")
 
 class DeliveryOrder:
     def __init__(self,customer,item):
@@ -40,10 +40,14 @@ print(driver1.introduce())
 
 item1 = input(f"{customer_name1} enter you items: ")     
 item2 = input(f"{customer_name2} enter your items: ")
+customer1 = Customer(person1)
+customer1.place_order(item1)
 customer2 = Customer(person2)
 customer2.place_order(item2)
 
+print("\nOrder Summary:")
 vehicle = input("Enter Vehicle here: ")
 driver = Driver(driver1,vehicle)
 print(driver.deliver(item1))
+print(driver.deliver(item2))
 
